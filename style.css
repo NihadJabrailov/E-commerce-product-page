@@ -1,0 +1,95 @@
+/*Buradan işarələnən hissəyə qədər olan hissə ümumi stillərdir*/
+:root {
+    /*Rənglər olan hissə*/
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --orange: hsl(26, 100%, 55%);
+    --hover-orange: hsl(25, 100%, 94%);
+    --sebetin-ve-paraggrafin-rengi: hsl(220, 14%, 75%);
+    --hover-sebetin-rengi: hsl(219, 9%, 45%);
+}
+
+* {
+    /*reset kodları*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.kumbh-sans-400 {
+
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "YOPQ" 300;
+}
+
+.h1Text {
+    font-family: "Kumbh Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 32px;
+    letter-spacing: -0.5px;
+    color: var(--black);
+}
+
+.pharagrapfText {
+    font-family: "Kumbh Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    letter-spacing: -0.5px;
+    color: var(--sebetin-ve-paraggrafin-rengi);
+}
+
+.saleAndCompanyText {
+    font-family: "Kumbh Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+    color: var(--sebetin-ve-paraggrafin-rengi);
+
+}
+
+.navbarContainer {
+    /*Navbarın mobile üçün olan dizaynı*/
+    width: 100%;
+    height: 75px;
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.navbarLeft,
+.navbarRight {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+}
+
+.navbarLeft {
+    width: 44%;
+}
+
+.navbarRight {
+    width: 23%;
+}
+
+.menuToggle {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+}
