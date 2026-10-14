@@ -4,7 +4,7 @@
     --white: hsl(0, 0%, 100%);
     --black: hsl(0, 0%, 0%);
     --orange: hsl(26, 100%, 55%);
-    --hover-orange: hsl(25, 100%, 94%);
+    --hover-orange: hsl(26, 100%, 65%);
     --sebetin-ve-paraggrafin-rengi: hsl(220, 14%, 75%);
     --hover-sebetin-rengi: hsl(219, 9%, 45%);
 }
@@ -16,13 +16,9 @@
     box-sizing: border-box;
 }
 
-
-.kumbh-sans-400 {
-
-    font-weight: 400;
-    font-style: normal;
-    font-variation-settings:
-        "YOPQ" 300;
+body {
+    /*cartları arxa plandan ayırmaq üçün müvəqqəti arxa plan rəngi*/
+    background-color: var(--orange);
 }
 
 .h1Text {
@@ -40,19 +36,19 @@
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    font-size: 12px;
+    font-size: 16px;
     letter-spacing: -0.5px;
-    color: var(--sebetin-ve-paraggrafin-rengi);
+    color: var(--hover-sebetin-rengi);
 }
 
 .saleAndCompanyText {
     font-family: "Kumbh Sans", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 18px;
+    font-weight: 700;
+    font-style: bold;
+    font-size: 16px;
     letter-spacing: -0.5px;
-    color: var(--sebetin-ve-paraggrafin-rengi);
+    color: var(--hover-sebetin-rengi);
 
 }
 
@@ -60,15 +56,16 @@
     /*Navbarın mobile üçün olan dizaynı*/
     width: 100%;
     height: 75px;
-    background-color: aqua;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 24px;
+    background-color: var(--white);
 }
 
 .navbarLeft,
 .navbarRight {
+    /*sağ və sol tərəfin ümumi stilləri*/
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -76,20 +73,114 @@
 }
 
 .navbarLeft {
+    /*navbar içində 2 div açıldı. biri sağ biri sol hissə*/
     width: 44%;
 }
 
 .navbarRight {
+    /*navbar içində 2 div açıldı. biri sağ biri sol hissə*/
     width: 23%;
 }
 
 .menuToggle {
+    /*menu ikonunun stili*/
     border: none;
     background: none;
     cursor: pointer;
 }
 
 .avatar {
+    /*navbardakı avatar şəklinin stili*/
     width: 40px;
     height: 40px;
+}
+
+.cartContainer {
+    /*kartın ümumi containeri*/
+    width: 94%;
+    height: 300px;
+    position: absolute;
+    top: 75px;
+    margin: 12px;
+    border-radius: 12px;
+    background-color: var(--white);
+}
+
+.cartTopContainer {
+    /*kartın yuxarı hissesi*/
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.cartBottomContainer {
+    /*kartın alt hissəsi*/
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 24px;
+}
+
+#emptyCartMessage {
+    /*kart boşdur mesajı. ilkin halsa display blokc olur.
+    Lakin məhusl əlavə olunduqda bunun displayı none olacaq*/
+    display: block;
+}
+
+.dataCartContainer {
+    /*data hissəsinin əsas containeri */
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.cartRow {
+    /*cart içində data olarsa buradakı classın displayı flex
+    olmalıdır ki, data məlumatı görünsün*/
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.dataCartContainer img:first-child {
+    /*Cartın içində olan kiçik ayaqqabı
+    şəklinin stili*/
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+}
+
+.dataCartContainer img:last-child {
+    /*Cartın içində olan silmə ikonunun stili*/
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.checkoutButton button {
+    /*təsdiqləmə düyməsinin stili*/
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    border: none;
+    background-color: var(--orange);
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.checkoutButton :hover {
+    /*təsdiqləmə düyməsinə vurulduqda rəngi dəyişsin*/
+    background-color: var(--hover-orange);
 }
