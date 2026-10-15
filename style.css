@@ -49,7 +49,17 @@ body {
     font-size: 16px;
     letter-spacing: -0.5px;
     color: var(--hover-sebetin-rengi);
+}
 
+.slideMenuLink {
+    font-family: "Kumbh Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: bold;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    color: var(--black);
+    text-decoration: none;
 }
 
 .navbarContainer {
@@ -97,6 +107,8 @@ body {
 
 .cartContainer {
     /*kartın ümumi containeri*/
+    display: none;
+    flex-direction: column;
     width: 94%;
     height: 300px;
     position: absolute;
@@ -136,7 +148,7 @@ body {
     /*data hissəsinin əsas containeri */
     width: 100%;
     height: 50%;
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     gap: 12px;
@@ -159,11 +171,23 @@ body {
     border-radius: 12px;
 }
 
-.dataCartContainer img:last-child {
-    /*Cartın içində olan silmə ikonunun stili*/
+.deleteButton {
+    /*Silmə düyməsinin stili*/
     width: 24px;
     height: 24px;
+    padding: 0;
     cursor: pointer;
+    border: none;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.deleteButton img {
+    width: 8px;
+    height: 8px;
 }
 
 .checkoutButton button {
@@ -183,4 +207,49 @@ body {
 .checkoutButton :hover {
     /*təsdiqləmə düyməsinə vurulduqda rəngi dəyişsin*/
     background-color: var(--hover-orange);
+}
+
+.slideMenuContainer {
+    /*slide menu ümumi containeri*/
+    display: none;
+    background-color: var(--white);
+    width: 70%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    padding: 24px;
+}
+
+.slideMenuCloseButton {
+    /*buttonun stili*/
+    cursor: pointer;
+    border: none;
+    background: none;
+    margin-bottom: 60px;
+}
+
+.slideMenuCloseButton img {
+    /*close düyməsinin ölçüsü*/
+    width: 20px;
+    height: 20px;
+}
+
+.slideMenuRow {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.slideMenuRow ul li {
+    list-style: none;
+    margin-bottom: 24px;
+}
+
+.slideMenuRow li a {
+    transition: 0.25s ease;
+}
+
+.slideMenuRow li a:hover {
+    color: var(--hover-orange);
 }
