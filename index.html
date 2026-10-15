@@ -17,14 +17,14 @@
     <section class="navbarContainer"> <!--navbar üçün main container-->
 
         <div class="navbarLeft"> <!--navbardakı logoların sol tərəfi-->
-            <button class="menuToggle" aria-label="Open Menu">
+            <button id="menuButton" class="menuToggle" aria-label="Open Menu">
                 <img src="./images/icon-menu.svg" alt="Menu Icon">
             </button>
             <img src="./images/logo.svg" alt="Logo">
         </div>
 
         <div class="navbarRight"> <!--navbardakı sebet ve avatarın sağ tərəfi-->
-            <button class="menuToggle" aria-label="Open Menu">
+            <button id="cartButton" class="menuToggle" aria-label="Open Menu">
                 <img src="./images/icon-cart.svg" alt="Cart Icon">
             </button>
             <button class="menuToggle" aria-label="Open Menu">
@@ -34,7 +34,7 @@
 
     </section>
 
-    <section class="cartContainer"> <!--kartin oldugu hisse-->
+    <section id="cartContainer" class="cartContainer"> <!--kartin oldugu hisse-->
         <div class="cartTopContainer"> <!--kartin yuxari hissesi-->
             <h1 class="saleAndCompanyText" style="color: var(--black);">Cart</h1>
         </div>
@@ -45,21 +45,44 @@
             <h1 class="saleAndCompanyText" id="emptyCartMessage">Your cart is empty.</h1>
             <!--cart boş olanda bu hissə görünür-->
 
-            <div class="cartRow"> <!--məlumatlar olanda bu hissə görünür-->
-                <div class="dataCartContainer">
+            <div class="cartRow" id="CartRow"> <!--elementlləri sütun üzrə düzənləyən hisse-->
+                <div class="dataCartContainer"> <!--cartda data olarsa görünən hisse-->
                     <img src="./images/image-product-1-thumbnail.jpg" alt="Product Image">
-                    <p class="pharagrapfText">Fall Limited Edition Sneakers $125.00 x 3 <span>$375.00</span>
+                    <p class="pharagrapfText">Fall Limited Edition Sneakers $125.00 x
+                        <span id="productCount" class="pharagrapfText">0</span>
+                        <span id="productPrice" class="saleAndCompanyText" style="color: var(--black);">$0.00</span>
                     </p>
-                    <img src="./images/icon-delete.svg" alt="Delete Icon">
+                    <button class="deleteButton" id="deleteButton">
+                        <img src="./images/icon-delete.svg" alt="Delete Icon">
+                    </button>
                 </div>
 
-                <div class="checkoutButton">
+                <div class="checkoutButton"> <!--Checkout düyməsinin olduğu hissə-->
                     <button class="saleAndCompanyText" style="color: var(--black);">Checkout</button>
                 </div>
             </div>
 
         </div>
     </section>
+
+
+    <section id="slideMenuContainer" class="slideMenuContainer"> <!--sol terefden acilan slide menu containeri-->
+        <button id="slideMenuCloseButton" class="slideMenuCloseButton"> <!--slide menu close buttonu-->
+            <img src="./images/icon-close.svg" alt="Close Icon">
+        </button>
+
+        <div class="slideMenuRow"> <!--linklerin oldugu hisse-->
+            <ul>
+                <li><a class="slideMenuLink" href="#">Collections</a></li>
+                <li><a class="slideMenuLink" href="#">Men</a></li>
+                <li><a class="slideMenuLink" href="#">Women</a></li>
+                <li><a class="slideMenuLink" href="#">About</a></li>
+                <li><a class="slideMenuLink" href="#">Contact</a></li>
+            </ul>
+        </div>
+    </section>
+
+
 
 
     <script src="script.js"></script>
