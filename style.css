@@ -143,8 +143,7 @@
 .dataCartContainer {
     /*data hissəsinin əsas containeri */
     width: 100%;
-    height: 50%;
-    display: none;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 12px;
@@ -182,8 +181,8 @@
 }
 
 .deleteButton img {
-    width: 8px;
-    height: 8px;
+    width: 14px;
+    height: 16px;
 }
 
 .checkoutButton button {
@@ -295,4 +294,75 @@
 #nextButton {
     /*Sağ ox düyməsi - şəklin sağından 16px boşluq*/
     right: 16px;
+}
+
+.dataAndAddCartContainer {
+    /*Məhsulun məlumatları oldğu və cart hissəsinə əlavə edən buttonun olduğu ümumi stil*/
+    width: 100%;
+    padding: 24px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.priceAndSaleContainer,
+.snakersNumberContainer,
+.addCartButtonContainer {
+    /*Endirim məlumatları, ayaqqabının sayı və carta əlavə etmə hissəsinin olduğu ümumi stillər*/
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.discountContainer {
+    /*endirim məlumatı olan yer */
+    width: 50px;
+    height: 30px;
+    background-color: var(--black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.snakersNumberContainer button {
+    /* minus və plus düymələrinin stili*/
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.snakersNumberContainer {
+    /* ayaqqabinin sayinin oldugu yer */
+    background-color: hsl(223, 64%, 98%);
+    height: 50px;
+    border-radius: 10px;
+}
+
+.addCartButtonContainer {
+    /* add to cart buttonunun stili */
+    background-color: var(--orange);
+    height: 50px;
+    border-radius: 10px;
+}
+
+.addCartButton {
+    width: 100%;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
 }

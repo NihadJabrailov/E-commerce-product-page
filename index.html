@@ -49,7 +49,7 @@
                 <div class="dataCartContainer"> <!--cartda data olarsa görünən hisse-->
                     <img src="./images/image-product-1-thumbnail.jpg" alt="Product Image">
                     <p class="pharagrapfText">Fall Limited Edition Sneakers $125.00 x
-                        <span id="productCount" class="pharagrapfText">0</span>
+                        <span id="cartProductCount" class="pharagrapfText">0</span>
                         <span id="productPrice" class="saleAndCompanyText" style="color: var(--black);">$0.00</span>
                     </p>
                     <button class="deleteButton" id="deleteButton">
@@ -94,8 +94,42 @@
         </button>
     </section>
 
+    <section class="dataAndAddCartContainer">
+        <!--Məhsul haqqında məlumatların olduğu və məhsulu karta əlavə etmək üçün olan hissə-->
+        <h1 class="saleAndCompanyText">SNAKER COMPANY</h1>
+        <h1 class="h1Text">Fall Limited Edition Snakers</h1>
+        <p class="pharagrapfText">
+            These low-profile snakers are your perfect casual wear compation.
+            Featuring a durable rubber outer sole, they'll withstand everything
+            the weather can offer.
+        </p>
 
+        <div class="priceAndSaleContainer">
+            <h1 class="h1Text">$125.00</h1>
+            <div class="discountContainer">
+                <h1 class="saleAndCompanyText" style="color: var(--white); font-size: 18px;">50%</h1>
+            </div>
+            <h1 class="slideMenuLink"
+                style="text-decoration: line-through; color: var(--sebetin-ve-paraggrafin-rengi);">$250.00</h1>
+        </div>
 
+        <div class="snakersNumberContainer">
+            <button id="minusButton" class="minusButton">
+                <img src="./images/icon-minus.svg" alt="Minus Icon">
+            </button>
+            <h1 id="productCount" class="saleAndCompanyText">0</h1>
+            <button id="plusButton" class="plusButton">
+                <img src="./images/icon-plus.svg" alt="Plus Icon">
+            </button>
+        </div>
+
+        <div class="addCartButtonContainer">
+            <button id="addCartButton" class="addCartButton">
+                <img src="./images/icon-cart.svg" alt="Cart Icon">
+                <h1 class="saleAndCompanyText" style="color: var(--black);">Add to cart</h1>
+            </button>
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>

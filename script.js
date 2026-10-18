@@ -1,4 +1,3 @@
-
 //mobile üçün menunun açılıb bağlanması üçün lazım olan obyektlər
 const menuButton = document.getElementById("menuButton");
 const slideMenuContainer = document.getElementById("slideMenuContainer");
@@ -14,6 +13,15 @@ const cartButton = document.getElementById("cartButton");
 const sliderPhoto = document.getElementById("sliderPhoto");
 const nextButton = document.getElementById("nextButton");
 const previousButton = document.getElementById("previousButton");
+
+//Məhsulun sayının artırıb azaltmaq üçün lazım olan obyektlər
+const minusButton = document.getElementById("minusButton");
+const plusButton = document.getElementById("plusButton");
+const productCount = document.getElementById("productCount");
+const cartProductCount = document.getElementById("cartProductCount");
+const productPrice = document.getElementById("productPrice");
+const deleteButton = document.getElementById("deleteButton");
+const addCartButton = document.getElementById("addCartButton");
 
 //menunun işləməsi üçün lazım olan funksiya
 menuButton.addEventListener("click", () => {
@@ -39,13 +47,11 @@ slideMenuCloseButton.addEventListener("click", () => {
 cartButton.addEventListener("click", () => {
     if (cartContainer.style.display !== "flex") {
         cartContainer.style.display = "flex";
-
     }
     else {
         cartContainer.style.display = "none";
     }
 });
-
 
 // slider şəkil üçün lazım olan funksiya
 const images = [
@@ -66,3 +72,50 @@ previousButton.addEventListener('click', () => { //əvvələ qayıdır
     sliderPhoto.src = images[currentImageIndex];
 });
 
+//Məhsulun sayının artırıb azaltmaq və karta əlavə etmək üçün lazım olan funksiyalar
+const UNIT_PRICE = 125.00;
+let productQuantity = 0; // Məhsul bölməsində seçilən say
+let cartCount = 0;        // Səbətdəki faktiki məhsul sayı
+
+// Səbətin görünüşünü və qiymətini yeniləyən funksiya
+function updateCart() {
+    if (cartCount > 0) {
+        emptyCartMessage.style.display = "none";
+        CartRow.style.display = "flex";
+        cartProductCount.textContent = cartCount;
+        productPrice.textContent = `$${(UNIT_PRICE * cartCount).toFixed(2)}`;
+    } else {
+        emptyCartMessage.style.display = "flex";
+        CartRow.style.display = "none";
+        cartProductCount.textContent = "0";
+        productPrice.textContent = "$0.00";
+    }
+}
+
+// Sayı artırmaq (yalnız məhsul səhifəsindəki rəqəmi dəyişir)
+plusButton.addEventListener("click", () => {
+    productQuantity++;
+    productCount.textContent = productQuantity;
+});
+
+// Sayı azaltmaq (yalnız məhsul səhifəsindəki rəqəmi dəyişir)
+minusButton.addEventListener("click", () => {
+    if (productQuantity > 0) {
+        productQuantity--;
+        productCount.textContent = productQuantity;
+    }
+});
+
+// "Add to cart" düyməsinə basdıqda seçilən say səbətə əlavə olunur
+addCartButton.addEventListener("click", () => {
+    if (productQuantity > 0) {
+        cartCount += productQuantity;
+        updateCart();
+    }
+});
+
+// Səbətdən məhsulu silmək düyməsi
+deleteButton.addEventListener("click", () => {
+    cartCount = 0;
+    updateCart();
+});
