@@ -62,14 +62,37 @@ const images = [
 ];
 let currentImageIndex = 0;
 
+// Thumbnail şəkillər üçün obyektlər və funksiyalar
+const thumbnailItems = document.querySelectorAll(".thumbnailItem");
+
+function setActiveThumbnail(index) {
+    thumbnailItems.forEach((thumb, i) => {
+        if (i === index) {
+            thumb.classList.add("activeThumbnail");
+        } else {
+            thumb.classList.remove("activeThumbnail");
+        }
+    });
+}
+
+thumbnailItems.forEach((thumb, index) => {
+    thumb.addEventListener("click", () => {
+        currentImageIndex = index;
+        sliderPhoto.src = images[currentImageIndex];
+        setActiveThumbnail(currentImageIndex);
+    });
+});
+
 nextButton.addEventListener('click', () => {
     currentImageIndex = (currentImageIndex + 1) % images.length; // Sona çatanda əvvələ qayıdır
     sliderPhoto.src = images[currentImageIndex];
+    setActiveThumbnail(currentImageIndex);
 });
 
 previousButton.addEventListener('click', () => { //əvvələ qayıdır
     currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
     sliderPhoto.src = images[currentImageIndex];
+    setActiveThumbnail(currentImageIndex);
 });
 
 //Məhsulun sayının artırıb azaltmaq və karta əlavə etmək üçün lazım olan funksiyalar
