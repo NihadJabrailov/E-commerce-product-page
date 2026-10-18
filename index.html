@@ -21,13 +21,22 @@
                 <img src="./images/icon-menu.svg" alt="Menu Icon">
             </button>
             <img src="./images/logo.svg" alt="Logo">
+            <nav class="desktopNav">
+                <ul>
+                    <li><a href="#">Collections</a></li>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
         </div>
 
         <div class="navbarRight"> <!--navbardakı sebet ve avatarın sağ tərəfi-->
             <button id="cartButton" class="menuToggle" aria-label="Open Menu">
                 <img src="./images/icon-cart.svg" alt="Cart Icon">
             </button>
-            <button class="menuToggle" aria-label="Open Menu">
+            <button class="menuToggle avatarButton" aria-label="Open Menu">
                 <img class="avatar" src="./images/image-avatar.png" alt="Avatar">
             </button>
         </div>
@@ -82,54 +91,77 @@
         </div>
     </section>
 
-    <section class="sliderPhotoContainer"> <!--Məhsula baxmaq üçün şəkillərin olduğu hisse-->
-        <button id="previousButton" class="sliderButton" aria-label="Previous Image">
-            <img src="./images/icon-previous.svg" alt="Previous Button">
-        </button>
+    <main class="productMainContainer">
+        <section class="sliderPhotoContainer"> <!--Məhsula baxmaq üçün şəkillərin olduğu hisse-->
+            <div class="mainPhotoContainer">
+                <button id="previousButton" class="sliderButton" aria-label="Previous Image">
+                    <img src="./images/icon-previous.svg" alt="Previous Button">
+                </button>
 
-        <img id="sliderPhoto" src="./images/image-product-1.jpg" alt="Product Image">
+                <img id="sliderPhoto" src="./images/image-product-1.jpg" alt="Product Image">
 
-        <button id="nextButton" class="sliderButton" aria-label="Next Button">
-            <img src="./images/icon-next.svg" alt="Next Button">
-        </button>
-    </section>
-
-    <section class="dataAndAddCartContainer">
-        <!--Məhsul haqqında məlumatların olduğu və məhsulu karta əlavə etmək üçün olan hissə-->
-        <h1 class="saleAndCompanyText">SNAKER COMPANY</h1>
-        <h1 class="h1Text">Fall Limited Edition Snakers</h1>
-        <p class="pharagrapfText">
-            These low-profile snakers are your perfect casual wear compation.
-            Featuring a durable rubber outer sole, they'll withstand everything
-            the weather can offer.
-        </p>
-
-        <div class="priceAndSaleContainer">
-            <h1 class="h1Text">$125.00</h1>
-            <div class="discountContainer">
-                <h1 class="saleAndCompanyText" style="color: var(--white); font-size: 18px;">50%</h1>
+                <button id="nextButton" class="sliderButton" aria-label="Next Button">
+                    <img src="./images/icon-next.svg" alt="Next Button">
+                </button>
             </div>
-            <h1 class="slideMenuLink"
-                style="text-decoration: line-through; color: var(--sebetin-ve-paraggrafin-rengi);">$250.00</h1>
-        </div>
 
-        <div class="snakersNumberContainer">
-            <button id="minusButton" class="minusButton">
-                <img src="./images/icon-minus.svg" alt="Minus Icon">
-            </button>
-            <h1 id="productCount" class="saleAndCompanyText">0</h1>
-            <button id="plusButton" class="plusButton">
-                <img src="./images/icon-plus.svg" alt="Plus Icon">
-            </button>
-        </div>
+            <!-- Masaüstü üçün kiçik thumbnail şəkilləri -->
+            <div class="thumbnailsContainer">
+                <div class="thumbnailItem activeThumbnail" data-index="0">
+                    <img src="./images/image-product-1-thumbnail.jpg" alt="Product 1 Thumbnail">
+                </div>
+                <div class="thumbnailItem" data-index="1">
+                    <img src="./images/image-product-2-thumbnail.jpg" alt="Product 2 Thumbnail">
+                </div>
+                <div class="thumbnailItem" data-index="2">
+                    <img src="./images/image-product-3-thumbnail.jpg" alt="Product 3 Thumbnail">
+                </div>
+                <div class="thumbnailItem" data-index="3">
+                    <img src="./images/image-product-4-thumbnail.jpg" alt="Product 4 Thumbnail">
+                </div>
+            </div>
+        </section>
 
-        <div class="addCartButtonContainer">
-            <button id="addCartButton" class="addCartButton">
-                <img src="./images/icon-cart.svg" alt="Cart Icon">
-                <h1 class="saleAndCompanyText" style="color: var(--black);">Add to cart</h1>
-            </button>
-        </div>
-    </section>
+        <section class="dataAndAddCartContainer">
+            <!--Məhsul haqqında məlumatların olduğu və məhsulu karta əlavə etmək üçün olan hissə-->
+            <h2 class="companySubtitle">SNEAKER COMPANY</h2>
+            <h1 class="h1Text">Fall Limited Edition Sneakers</h1>
+            <p class="pharagrapfText">
+                These low-profile sneakers are your perfect casual wear companion.
+                Featuring a durable rubber outer sole, they'll withstand everything
+                the weather can offer.
+            </p>
+
+            <div class="priceAndSaleContainer">
+                <div class="currentPriceRow">
+                    <h1 class="h1Text">$125.00</h1>
+                    <div class="discountContainer">
+                        <h1 class="saleAndCompanyText" style="color: var(--white); font-size: 18px;">50%</h1>
+                    </div>
+                </div>
+                <h1 class="originalPriceText">$250.00</h1>
+            </div>
+
+            <div class="actionButtonsContainer">
+                <div class="snakersNumberContainer">
+                    <button id="minusButton" class="minusButton" aria-label="Decrease quantity">
+                        <img src="./images/icon-minus.svg" alt="Minus Icon">
+                    </button>
+                    <h1 id="productCount" class="saleAndCompanyText">0</h1>
+                    <button id="plusButton" class="plusButton" aria-label="Increase quantity">
+                        <img src="./images/icon-plus.svg" alt="Plus Icon">
+                    </button>
+                </div>
+
+                <div class="addCartButtonContainer">
+                    <button id="addCartButton" class="addCartButton">
+                        <img src="./images/icon-cart.svg" alt="Cart Icon">
+                        <span class="addCartButtonText">Add to cart</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
